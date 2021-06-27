@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  pg:
+    image: postgres:11.2
+    container_name: pg
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    restart: always
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/go/src/github.com/deepinbytes/go_voucher
+    depends_on:
+      - pg
+    links:
+      - pg
+    environment:
+      WAIT_HOSTS: pg:5432
+
+volumes:
+  data:
