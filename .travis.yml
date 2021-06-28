@@ -6,8 +6,11 @@ go:
 env:
   - GO111MODULE=on
 
-script:
-  - go test -v ./... -coverprofile=coverage.txt -covermode=atomic
+install:
+  - go get golang.org/x/tools/cmd/cover
+  - go get github.com/mattn/goveralls
+  - go get github.com/axw/gocov/gocov
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+script:
+  - go test -v ./... -covermode=count -coverprofile=profile.cov
+  - goveralls -coverprofile=profile.cov -service=travis-ci

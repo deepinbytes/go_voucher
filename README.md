@@ -1,7 +1,7 @@
 
 
 [![Build Status](https://travis-ci.com/deepinbytes/go_voucher.svg?branch=master)](https://travis-ci.com/deepinbytes/go_voucher)
-[![Coverage Status](https://coveralls.io/repos/github/deepinbytes/go_voucher/badge.svg?branch=master)](https://coveralls.io/github/deepinbytes/go_voucher?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/deepinbytes/go_voucher/badge.svg)](https://coveralls.io/github/deepinbytes/go_voucher)
 [![Go Report](https://goreportcard.com/badge/github.com/deepinbytes/go_voucher)](https://goreportcard.com/report/github.com/deepinbytes/go_voucher)
 
 
